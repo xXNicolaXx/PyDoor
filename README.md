@@ -3,6 +3,8 @@ A python backdoor that allows to use a Windows CMD and permits to download and u
 
 To start the server type on a shell: python3 server.py
 
+In client.py you have to set the IP and the port you setup on the server.
+
 You can test the program starting the client first and then the server or vice versa.
 
 This version works only on linux due to fact that Windows doesn't allow colored characters in terminal.  
