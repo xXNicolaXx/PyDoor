@@ -11,7 +11,7 @@ def gui():
       / /_/ / / / / / / / __ \/ __ \/ ___/
      / ____/ /_/ / /_/ / /_/ / /_/ / /    
     /_/    \__, /_____/\____/\____/_/     
-          /____/                        v2.0.1  (Made by xXNicolaXx)
+          /____/                        v2.0.2  (Made by xXNicolaXx)
           
 ####################################################################
  \033[97m''')
@@ -26,17 +26,21 @@ def gui():
 
 
 def instruction():
-    choice = input("Type 'help' for more information about available commands or 'run' to execute the program \n"
-                   "PyDoor> ")
-    while True: 
-        if choice != 'help' and choice != 'run':
-            choice = input("PyDoor> ")
-        elif choice == 'help':
-            helper()
-            choice = input("PyDoor> ")
-        elif choice == 'run':
-            server.main()
-
+    try:
+        choice = input("Type 'help' for more information about available commands or 'run' to execute the program \n"
+                       "PyDoor> ")
+        while True: 
+            if choice != 'help' and choice != 'run':
+                choice = input("PyDoor> ")
+            elif choice == 'help':
+                helper()
+                choice = input("PyDoor> ")
+            elif choice == 'run':
+                server.main()
+    except KeyboardInterrupt:
+        print("\n\033[31m[*] (Ctrl + C) Detected...")
+        print("[*] Thank you for using PyDoor!")
+       
 
 def helper():
     print('''\033[95m
